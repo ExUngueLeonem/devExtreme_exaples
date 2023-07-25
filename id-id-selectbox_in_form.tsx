@@ -78,19 +78,25 @@ export default function Config() {
     <Page title="Настройки">
       <form onSubmit={onFormSubmitted}>
         <Form disabled={isLocked} colCount={2} labelMode="floating" onFieldDataChanged={formUpdate} formData={model}>
-          <SimpleItem
-            dataField={"allowedCategoryForPayment"}
-            editorType={"dxTagBox"}
-            editorOptions={{ dataSource: categories, displayExpr: "name", valueExpr: "id" }}
-            helpText={"Категории гостей для которых доступна оплата"}
-          />
-          <SimpleItem
-            label={{ location: "top" }}
-            dataField={"attachGuestToOrder"}
-            editorType={"dxSwitch"}
-            editorOptions={{ dataSource: categories, displayExpr: "name", valueExpr: "id" }}
-            helpText={"Привязывать гостя к заказу в момент оплаты"}
-          />
+          {/*закомментирую рабочий код, который не относится к примеру*/}
+          {/*<SimpleItem*/}
+          {/*  dataField={"allowedCategoryForPayment"}*/}
+          {/*  editorType={"dxTagBox"}*/}
+          {/*  editorOptions={{ dataSource: categories, displayExpr: "name", valueExpr: "id" }}*/}
+          {/*  helpText={"Категории гостей для которых доступна оплата"}*/}
+          {/*/>*/}
+          {/*<SimpleItem*/}
+          {/*  label={{ location: "top" }}*/}
+          {/*  dataField={"attachGuestToOrder"}*/}
+          {/*  editorType={"dxSwitch"}*/}
+          {/*  editorOptions={{ dataSource: categories, displayExpr: "name", valueExpr: "id" }}*/}
+          {/*  helpText={"Привязывать гостя к заказу в момент оплаты"}*/}
+          {/*/>*/}
+
+
+
+
+          {/*Вот он, наш компонент, ради которого этот пример*/}
           <SimpleItem
             label={{ location: "top", text: "Назначения скидок", visible: true }}
             dataField={"categoryMappingForDiscount"}
@@ -122,6 +128,10 @@ export default function Config() {
               );
             }}
           />
+
+
+
+
           <EmptyItem />
           <ButtonItem
             colSpan={2}
